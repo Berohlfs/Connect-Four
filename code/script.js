@@ -1,24 +1,10 @@
-var counter_color = 0;
+var counter_color = true;
 const divs = document.getElementsByClassName('inner');
 const red = 'red'
 const green = 'green'
 
 for (i = 0; i < 9; i++) {
     divs[i].style.backgroundColor = 'darkblue';
-}
-
-function colorir(x) {
-    if (divs[x].style.backgroundColor == 'darkblue') {
-        if (counter_color % 2 == 0) {
-            divs[x].style.backgroundColor = green;
-            counter_color++;
-        }
-        else {
-            divs[x].style.backgroundColor = red;
-            counter_color++;
-        }
-    }
-    winsituation();
 }
 
 const win = [
@@ -51,4 +37,22 @@ function winsituation(){
             }
         }
     }
+}
+
+function colorir(x) {
+    if (divs[x].style.backgroundColor == 'darkblue') {
+        if (counter_color) {
+            divs[x].style.backgroundColor = green;
+            counter_color=false;
+        }
+        else {
+            divs[x].style.backgroundColor = red;
+            counter_color=true;
+        }
+    }
+    winsituation();
+}
+
+function reload(){
+    window.location.reload();
 }

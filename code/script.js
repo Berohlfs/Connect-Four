@@ -1,4 +1,4 @@
-var counter_color = true;
+var toogle_color = true;
 var pode_colorir = true;
 const divs = document.getElementsByClassName('inner');
 const red = 'red'
@@ -24,23 +24,23 @@ function fill(){
 
 function colorir(x) {
     if (pode_colorir && divs[x].style.backgroundColor == 'darkblue') {
-        if (counter_color) {
+        if (toogle_color) {
             divs[x].style.backgroundColor = green;
-            counter_color=false;
+            toogle_color=false;
             isWin();
         }
         else {
             divs[x].style.backgroundColor = red;
-            counter_color=true;
+            toogle_color=true;
             isWin();
         }
     }
 }
 
 function isWin(){
-    var counter_win;
-    var turn;
-    var count_draw = 0;
+    let counter_win;
+    let turn;
+    let counter_draw = 0;
     for(i=0;i<2;i++){
         i == 0 ? turn = green : turn = red;
         console.log(turn)
@@ -61,9 +61,9 @@ function isWin(){
     }
     for(i=0;i<9;i++){
         if(divs[i].style.backgroundColor != 'darkblue' && counter_win<3){
-            count_draw++
+            counter_draw++
         }
-        if(count_draw == 9){
+        if(counter_draw == 9){
             document.querySelector('h1').innerText = `Draw!`
         }
     }

@@ -7,8 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Winner :</h1>
+<body onload="fill()">
+    <h1></h1>
     <div id="pai">
         <div class="inner" onclick="colorir(0)"></div>
         <div class="inner" onclick="colorir(1)"></div>
@@ -20,7 +20,7 @@
         <div class="inner" onclick="colorir(7)"></div>
         <div class="inner" onclick="colorir(8)"></div>
     </div>
-    <button onclick="reload()">Recomeçar!</button>
+    <button onclick="fill()">Recomeçar!</button>
     <script src="script.js"></script>
 </body>
 </html>

@@ -13,8 +13,11 @@ const win_situations = [
     [2,4,6]
 ]
 
-for (i = 0; i < 9; i++) {
-    divs[i].style.backgroundColor = 'darkblue';
+function fill(){
+    for (i = 0; i < 9; i++) {
+        divs[i].style.backgroundColor = 'darkblue';
+        document.querySelector('h1').innerText = `Winner :`
+    }
 }
 
 function colorir(x) {
@@ -61,8 +64,4 @@ function isWin(){
             document.querySelector('h1').innerText = `Draw!`
         }
     }
-}
-
-function reload(){
-    window.location.reload();
 }

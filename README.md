@@ -4,7 +4,9 @@ Neste repositório, encontra-se o código-fonte utilizado para criação de um *
  Técnologias utilizadas:
  - [x] CSS
  - [x] HTML
- - [x] JavScript
+ - [x] JavaScript
+ 
+ ![](imgs/colaborador1.jpg)
  
  | Colaborador | 
  | --- |

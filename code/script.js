@@ -1,4 +1,5 @@
 var counter_color = true;
+var pode_colorir = true;
 const divs = document.getElementsByClassName('inner');
 const red = 'red'
 const green = 'green'
@@ -16,12 +17,13 @@ const win_situations = [
 function fill(){
     for (i = 0; i < 9; i++) {
         divs[i].style.backgroundColor = 'darkblue';
-        document.querySelector('h1').innerText = `Winner :`
     }
+    document.querySelector('h1').innerText = `Winner :`
+    pode_colorir = true;
 }
 
 function colorir(x) {
-    if (divs[x].style.backgroundColor == 'darkblue') {
+    if (pode_colorir && divs[x].style.backgroundColor == 'darkblue') {
         if (counter_color) {
             divs[x].style.backgroundColor = green;
             counter_color=false;
@@ -52,6 +54,7 @@ function isWin(){
                 divs[win_situations[j][k]].style.backgroundColor == turn && counter_win++ 
                 if(counter_win == 3){
                     document.querySelector('h1').innerText = `Winner : ${turn}!`
+                    pode_colorir = false;
                 }
             }
         }

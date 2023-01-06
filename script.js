@@ -39,7 +39,7 @@ function fill(){
     for (i = 0; i < 25; i++) {
         divs[i].style.backgroundColor = 'darkblue';
     }
-    document.querySelector('h1').innerText = `Winner :`
+    document.querySelector('h2').innerText = `Winner :`
     pode_colorir = true;
     counter_draw = 0;
 }
@@ -59,7 +59,7 @@ function colorir(x) {
         counter_draw++
     }
     if(counter_draw == 25){
-        document.querySelector('h1').innerText = `Draw!`
+        document.querySelector('h2').innerText = `Draw!`
     }
 }
 
@@ -78,7 +78,7 @@ function isWin(){
                 console.log(win_situations[j][k])
                 divs[win_situations[j][k]].style.backgroundColor == turn && counter_win++ 
                 if(counter_win == 4){
-                    document.querySelector('h1').innerText = `Winner : ${turn}!`
+                    document.querySelector('h2').innerText = `Winner : ${turn}!`
                     pode_colorir = false;
                 }
             }

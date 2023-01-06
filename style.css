@@ -17,12 +17,12 @@
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            width:320px;
+            width:380px;
             margin: 30px auto 20px;
         }
         .inner{
-            height:90px;
-            width:90px;
+            height:70px;
+            width:70px;
             margin:2px;
             cursor:pointer;
             border-radius: 10px;

@@ -2,6 +2,7 @@ var toogle_color = true;
 var pode_colorir = true;
 let counter_draw;
 const divs = document.getElementsByClassName('inner');
+const div = document.getElementById('pai');
 const red = 'red'
 const green = 'green'
 const win_situations = [
@@ -36,7 +37,9 @@ const win_situations = [
 ]
 
 function fill(){
+    div.innerHTML = ``
     for (i = 0; i < 25; i++) {
+        div.innerHTML += `<div class="inner" onclick="colorir(${i})"></div>`
         divs[i].style.backgroundColor = 'darkblue';
     }
     document.querySelector('h2').innerText = `Winner :`

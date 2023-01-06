@@ -71,14 +71,12 @@ function isWin(){
     let turn;
     for(i=0;i<2;i++){
         i == 0 ? turn = green : turn = red;
-        console.log(turn)
         for(j=0;j<28;j++){
             if(counter_win == 4){
                 break;
             }
             counter_win = 0;
             for(k=0;k<4;k++){
-                console.log(win_situations[j][k])
                 divs[win_situations[j][k]].style.backgroundColor == turn && counter_win++ 
                 if(counter_win == 4){
                     document.querySelector('h2').innerText = `Winner : ${turn}!`

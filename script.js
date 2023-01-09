@@ -1,6 +1,6 @@
 var toogle_color = true;
 var pode_colorir = true;
-let counter_draw;
+var counter_draw;
 const divs = document.getElementsByClassName('inner');
 const div = document.getElementById('pai');
 const red = 'red'

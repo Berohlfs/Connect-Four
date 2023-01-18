@@ -52,16 +52,15 @@ function colorir(x) {
         if (toogle_color) {
             divs[x].style.backgroundColor = green;
             toogle_color=false;
-            isWin();
         }
         else {
             divs[x].style.backgroundColor = red;
             toogle_color=true;
-            isWin();
         }
+        isWin();
         counter_draw++
     }
-    if(counter_draw == 25){
+    if(counter_draw == divs.length){
         document.querySelector('h2').innerText = `Draw!`
     }
 }
@@ -71,14 +70,14 @@ function isWin(){
     let turn;
     for(i=0;i<2;i++){
         i == 0 ? turn = green : turn = red;
-        for(j=0;j<28;j++){
-            if(counter_win == 4){
+        for(j=0; j<win_situations.length; j++){
+            if(counter_win == win_situations[0].length){
                 break;
             }
             counter_win = 0;
-            for(k=0;k<4;k++){
+            for(k=0; k < win_situations[j].length; k++){
                 divs[win_situations[j][k]].style.backgroundColor == turn && counter_win++ 
-                if(counter_win == 4){
+                if(counter_win == win_situations[j].length){
                     document.querySelector('h2').innerText = `Winner : ${turn}!`
                     pode_colorir = false;
                 }

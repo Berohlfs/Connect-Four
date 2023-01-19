@@ -1,11 +1,11 @@
 var toogle_color = true;
 var pode_colorir = true;
 var counter_draw;
-const divs = document.getElementsByClassName('inner');
-const div = document.getElementById('pai');
-const red = 'red'
-const green = 'green'
-const win_situations = [
+const DIVS = document.getElementsByClassName('inner');
+const DIV = document.getElementById('pai');
+const RED = 'red'
+const GREEN = 'green'
+const WIN_SITUATIONS = [
     [0,1,2,3],
     [1,2,3,4],
     [5,6,7,8],
@@ -37,10 +37,10 @@ const win_situations = [
 ]
 
 function fill(){
-    div.innerHTML = ``
+    DIV.innerHTML = ``
     for (i = 0; i < 25; i++) {
-        div.innerHTML += `<div class="inner" onclick="colorir(${i})"></div>`
-        divs[i].style.backgroundColor = 'darkblue';
+        DIV.innerHTML += `<div class="inner" onclick="colorir(${i})"></div>`
+        DIVS[i].style.backgroundColor = 'darkblue';
     }
     document.querySelector('h2').innerText = `Winner :`
     pode_colorir = true;
@@ -48,19 +48,19 @@ function fill(){
 }
 
 function colorir(x) {
-    if (pode_colorir && divs[x].style.backgroundColor == 'darkblue') {
+    if (pode_colorir && DIVS[x].style.backgroundColor == 'darkblue') {
         if (toogle_color) {
-            divs[x].style.backgroundColor = green;
+            DIVS[x].style.backgroundColor = GREEN;
             toogle_color=false;
         }
         else {
-            divs[x].style.backgroundColor = red;
+            DIVS[x].style.backgroundColor = RED;
             toogle_color=true;
         }
         isWin();
         counter_draw++
     }
-    if(counter_draw == divs.length){
+    if(counter_draw == DIVS.length){
         document.querySelector('h2').innerText = `Draw!`
     }
 }
@@ -69,15 +69,15 @@ function isWin(){
     let counter_win;
     let turn;
     for(i=0;i<2;i++){
-        i == 0 ? turn = green : turn = red;
-        for(j=0; j<win_situations.length; j++){
-            if(counter_win == win_situations[0].length){
+        i == 0 ? turn = GREEN : turn = RED;
+        for(j=0; j<WIN_SITUATIONS.length; j++){
+            if(counter_win == WIN_SITUATIONS[0].length){
                 break;
             }
             counter_win = 0;
-            for(k=0; k < win_situations[j].length; k++){
-                divs[win_situations[j][k]].style.backgroundColor == turn && counter_win++ 
-                if(counter_win == win_situations[j].length){
+            for(k=0; k < WIN_SITUATIONS[j].length; k++){
+                DIVS[WIN_SITUATIONS[j][k]].style.backgroundColor == turn && counter_win++ 
+                if(counter_win == WIN_SITUATIONS[j].length){
                     document.querySelector('h2').innerText = `Winner : ${turn}!`
                     pode_colorir = false;
                 }
